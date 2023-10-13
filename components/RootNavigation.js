@@ -8,23 +8,7 @@ import WelcomeScreen from "./WelcomeScreen";
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="welcome"
-        component={WelcomeScreen}
-        options={{ headerShown: true }}
-      ></Stack.Screen>
-      {/* <Stack.Screen
-        name="login"
-        component={Login}
-        options={{ headerShown: false }}
-      ></Stack.Screen>
-      <Stack.Screen name="profile" component={Profile}></Stack.Screen>
-      <Stack.Screen name="menu" component={Menu}></Stack.Screen> */}
-      {/* Set up stack navigation to move between welcome screen and subscribe screen here */}
-    </Stack.Navigator>
-  );
+  return <WelcomeScreen />;
 };
 
 export default RootNavigator;
