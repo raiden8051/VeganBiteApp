@@ -7,8 +7,6 @@ import {
   Image,
 } from "react-native";
 import { useFonts } from "expo-font";
-import { SafeAreaView } from "react-native-safe-area-context";
-import Ionicons from "@expo/vector-icons/Ionicons";
 
 const WelcomeScreen = ({ navigation }) => {
   const [loaded] = useFonts({
@@ -19,6 +17,11 @@ const WelcomeScreen = ({ navigation }) => {
   if (!loaded) {
     return null;
   }
+
+  setTimeout(() => {
+    navigation.navigate("home");
+  }, 2000);
+
   return (
     <View style={styles.container}>
       <View style={styles.innerDiv}>
@@ -26,8 +29,8 @@ const WelcomeScreen = ({ navigation }) => {
           style={styles.logo}
           source={require("../assets/logo_main.png")}
         />
-        <Text style={styles.headerTextTwo}>Sweet Lemon </Text>
-        <Pressable>
+        <Text style={styles.headerTextTwo}>VeganBite </Text>
+        {/* <Pressable>
           <Ionicons
             style={styles.icon}
             name="ios-chevron-forward-circle-outline"
@@ -35,7 +38,7 @@ const WelcomeScreen = ({ navigation }) => {
             color="#f5f5f5"
             onPress={() => navigation.navigate("login")}
           />
-        </Pressable>
+        </Pressable> */}
       </View>
     </View>
   );
@@ -78,8 +81,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     height: "100%",
-    backgroundColor:
-      "linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(41,233,183,1) 60%, rgba(45,253,177,1) 100%);",
+    backgroundColor: "#3199a3",
   },
 });
 

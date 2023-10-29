@@ -1,0 +1,760 @@
+[
+  {
+    "_id": "65376df41708cbf6ed603202",
+    "name": "Bharawan Da Dhaba",
+    "rating": "4.4",
+    "rating_count": "50+ ratings",
+    "cost": "₹ 300",
+    "address": "Baily road, Patna",
+    "cuisine": "Indian",
+    "lic_no": "license",
+    "img": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2hpY2tlbiUyMGZyaWVkJTIwcmljZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    "menu": {
+      "Basmati ki mehak": {
+        "Plain Rice": {
+          "f_id": 1,
+          "price": "120",
+          "veg_or_non_veg": "veg"
+        },
+        "Jeera Rice": {
+          "f_id": 2,
+          "price": "135",
+          "veg_or_non_veg": "veg"
+        }
+      },
+      "Breakfast": {
+        "Aloo Paratha": {
+          "price": "45",
+          "veg_or_non_veg": "Veg"
+        },
+        "Onion Paratha": {
+          "price": "45",
+          "veg_or_non_veg": "Veg"
+        },
+        "Cheese Paratha": {
+          "price": "75",
+          "veg_or_non_veg": "Veg"
+        },
+        "Mix  Paratha": {
+          "price": "50",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Fast food and snacks": {
+        "Channa Chat": {
+          "price": "189",
+          "veg_or_non_veg": "Veg"
+        },
+        "Channa Fry": {
+          "price": "189",
+          "veg_or_non_veg": "Veg"
+        },
+        "Cheese Chilli Dry": {
+          "price": "300",
+          "veg_or_non_veg": "Veg"
+        },
+        "Cheese Chilli Gravy": {
+          "price": "320",
+          "veg_or_non_veg": "Veg"
+        },
+        "Cheese Chowmein": {
+          "price": "180",
+          "veg_or_non_veg": "Veg"
+        },
+        "Finger Chips": {
+          "price": "120",
+          "veg_or_non_veg": "Veg"
+        },
+        "Manchurian Dry": {
+          "price": "150",
+          "veg_or_non_veg": "Veg"
+        },
+        "Manchurian Gravy": {
+          "price": "180",
+          "veg_or_non_veg": "Veg"
+        },
+        "Paneer Pakora": {
+          "price": "200",
+          "veg_or_non_veg": "Veg"
+        },
+        "Spring Roll": {
+          "price": "150",
+          "veg_or_non_veg": "Veg"
+        },
+        "Veg Noodles": {
+          "price": "120",
+          "veg_or_non_veg": "Veg"
+        },
+        "Veg Burger": {
+          "price": "50",
+          "veg_or_non_veg": "Veg"
+        },
+        "Veg Finger (8 Pcs)": {
+          "price": "150",
+          "veg_or_non_veg": "Veg"
+        },
+        "Cream Burger": {
+          "price": "80",
+          "veg_or_non_veg": "Veg"
+        },
+        "Cheese Burger": {
+          "price": "100",
+          "veg_or_non_veg": "Veg"
+        }
+      }
+    },
+    "link": "https://www.swiggy.com/restaurants/bharawan-da-dhaba-central-abohar-abohar-156587"
+  },
+  {
+    "_id": "653771a51708cbf6ed603203",
+    "name": "Sher-e-punjab veg",
+    "rating": "4.0",
+    "rating_count": "100+ ratings",
+    "cost": "₹ 150",
+    "address": "Boring road, Patna",
+    "cuisine": "North Indian",
+    "lic_no": "22120652000021",
+    "img": "https://media.istockphoto.com/photos/paneer-tikka-kabab-in-red-sauce-is-an-indian-dish-made-from-chunks-of-picture-id1257507446?b=1&k=20&m=1257507446&s=170667a&w=0&h=Nd7QsslbvPqOcvwu1bY0rEPZXJqwoKTYCal3nty4X-Y=",
+    "menu": {
+      "Recommended": {
+        "Chana Masala": {
+          "price": "119",
+          "veg_or_non_veg": "Veg"
+        },
+        "Mix Vegetable": {
+          "price": "119",
+          "veg_or_non_veg": "Veg"
+        },
+        "Veg Gravy": {
+          "price": "119",
+          "veg_or_non_veg": "Veg"
+        },
+        "Kadai Paneer": {
+          "price": "129",
+          "veg_or_non_veg": "Veg"
+        },
+        "Cheese Tikka Butter Masala": {
+          "price": "119",
+          "veg_or_non_veg": "Veg"
+        },
+        "Cheese Butter Masala": {
+          "price": "119",
+          "veg_or_non_veg": "Veg"
+        },
+        "Cheese Tomato": {
+          "price": "119",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Family Binge Combos": {
+        "Chana Masala (Without Onion + Garlic) + Mix Veg (Without Onion + Garlic) + Veg Biryani (Without Onion + Garlic) + 4 Butter Naan": {
+          "price": "735",
+          "veg_or_non_veg": "Veg"
+        },
+        "Punjabi Paneer (Without Onion + Garlic) + Veg Biryani (Without Onion + Garlic) + 4 Missi Chapati": {
+          "price": "523",
+          "veg_or_non_veg": "Veg"
+        },
+        "Cheese Tomato (Without Onion + Garlic) + Chesse Butter Masala (Without Onion + Garlic) + 4 Butter Naan": {
+          "price": "515",
+          "veg_or_non_veg": "Veg"
+        },
+        "Palak Paneer (Without Onion + Garlic) + Veg Biryani (Without Onion + Garlic) + Veg Pulao (Without Onion + Garlic)": {
+          "price": "655",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Vegetable": {
+        "Chana Masala": {
+          "price": "119",
+          "veg_or_non_veg": "Veg"
+        },
+        "Mix Vegetable": {
+          "price": "119",
+          "veg_or_non_veg": "Veg"
+        },
+        "Butter Palak Mattar": {
+          "price": "119",
+          "veg_or_non_veg": "Veg"
+        },
+        "Butter Palak Kaju": {
+          "price": "119",
+          "veg_or_non_veg": "Veg"
+        },
+        "Butter Jeera Aloo": {
+          "price": "119",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Paratha": {
+        "Potato Onion Parantha": {
+          "price": "45",
+          "veg_or_non_veg": "Veg"
+        },
+        "Mix Parantha": {
+          "price": "50",
+          "veg_or_non_veg": "Veg"
+        },
+        "Cheese Parantha": {
+          "price": "75",
+          "veg_or_non_veg": "Veg"
+        },
+        "Garlic Parantha": {
+          "price": "45",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Chapati & Naan": {
+        "Butter Chapati": {
+          "price": "7",
+          "veg_or_non_veg": "Veg"
+        },
+        "Missi Chapati": {
+          "price": "19",
+          "veg_or_non_veg": "Veg"
+        },
+        "Plain Chapati": {
+          "price": "6",
+          "veg_or_non_veg": "Veg"
+        },
+        "Churidar Parantha": {
+          "price": "25",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Rice": {
+        "Veg Biryani": {
+          "price": "220",
+          "veg_or_non_veg": "Veg"
+        },
+        "Paneer Jeera Rice": {
+          "price": "179",
+          "veg_or_non_veg": "Veg"
+        },
+        "Veg Pulao": {
+          "price": "220",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Snacks": {
+        "Cheese Finger": {
+          "price": "220",
+          "veg_or_non_veg": "Veg"
+        },
+        "Chana Fry": {
+          "price": "189",
+          "veg_or_non_veg": "Veg"
+        },
+        "Potato Chips": {
+          "price": "110",
+          "veg_or_non_veg": "Veg"
+        },
+        "Papad Masala": {
+          "price": "70",
+          "veg_or_non_veg": "Veg"
+        },
+        "Papad Dry": {
+          "price": "21",
+          "veg_or_non_veg": "Veg"
+        },
+        "Papad Fry": {
+          "price": "31",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Salad": {
+        "Cream Salad": {
+          "price": "179",
+          "veg_or_non_veg": "Veg"
+        },
+        "Green Salad": {
+          "price": "60",
+          "veg_or_non_veg": "Veg"
+        }
+      }
+    },
+    "link": "https://www.swiggy.com/restaurants/shere-punjab-veg-central-krishna-nagri-abohar-156588"
+  },
+  {
+    "_id": "6538dc21a707f3dcb06e8904",
+    "name": "Sethi Milk Badam",
+    "rating": "4.2",
+    "rating_count": "500+ ratings",
+    "cost": "₹ 100",
+    "address": "Kadamkuan, Patna",
+    "cuisine": "Sweets, Desserts",
+    "lic_no": "22119652000039",
+    "menu": {
+      "Desserts": {
+        "Julie 2pc": {
+          "price": "60",
+          "veg_or_non_veg": "Veg"
+        },
+        "Kulfi Simple 1pc": {
+          "price": "20",
+          "veg_or_non_veg": "Veg"
+        },
+        "Spongy Rasgulla Per Pc": {
+          "price": "40",
+          "veg_or_non_veg": "Veg"
+        },
+        "Faluda Rabri Per Glass": {
+          "price": "70",
+          "veg_or_non_veg": "Veg"
+        },
+        "Kulfi Big 1 Pc": {
+          "price": "40",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Beverages": {
+        "Badam Milk (200 Ml) Bottle": {
+          "price": "70",
+          "veg_or_non_veg": "Veg"
+        }
+      }
+    },
+    "link": "https://www.swiggy.com/restaurants/sethi-milk-badam-central-krishna-nagri-abohar-156590",
+    "img": "https://chefmeathome.com/cdn/shop/articles/Freak_Shake_Blog_Image_1200x.jpg?v=1633880329"
+  },
+  {
+    "_id": "6538ddcda707f3dcb06e8905",
+    "name": "Jodhpuri Kachori",
+    "rating": "3.2",
+    "rating_count": "Too Few Ratings",
+    "cost": "₹ 100",
+    "address": "Kankarbagh, Patna",
+    "cuisine": "Snacks",
+    "lic_no": "22121652000387",
+    "menu": {
+      "Snacks And Chat": {
+        "Dry Fruit Bhalla": {
+          "price": "40",
+          "veg_or_non_veg": "Veg"
+        },
+        "Stuffed Golgappe": {
+          "price": "30",
+          "veg_or_non_veg": "Veg"
+        },
+        "Papadi Chat": {
+          "price": "40",
+          "veg_or_non_veg": "Veg"
+        },
+        "Dry Fruit Dahi Bhalla": {
+          "price": "50",
+          "veg_or_non_veg": "Veg"
+        },
+        "Kachori": {
+          "price": "20",
+          "veg_or_non_veg": "Veg"
+        },
+        "Rajbhog": {
+          "price": "40",
+          "veg_or_non_veg": "Veg"
+        }
+      }
+    },
+    "link": "https://www.swiggy.com/restaurants/jodhpuri-kachori-central-main-bazar-abohar-156601",
+    "img": "https://static.wixstatic.com/media/70da2c_bd7e9085753141158b06529f01b039b1~mv2.jpg/v1/fill/w_1000,h_563,al_c,q_85,usm_0.66_1.00_0.01/70da2c_bd7e9085753141158b06529f01b039b1~mv2.jpg"
+  },
+  {
+    "_id": "6538e164a707f3dcb06e8906",
+    "name": "Tandoori Nights",
+    "rating": "4.1",
+    "rating_count": "2k+",
+    "cost": "₹ 300",
+    "address": "Punaichak, Patna",
+    "cuisine": "Tandoor",
+    "lic_no": "22121652000229",
+    "menu": {
+      "Snacks": {
+        "Peanut Masala": {
+          "price": "80",
+          "veg_or_non_veg": "Veg"
+        },
+        "Finger Chips": {
+          "price": "100",
+          "veg_or_non_veg": "Veg"
+        },
+        "Corn Chat": {
+          "price": "100",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Soya Chaap": {
+        "Tandoori Malai Chaap": {
+          "price": "220",
+          "veg_or_non_veg": "Veg"
+        },
+        "Tandoori Chaap": {
+          "price": "190",
+          "veg_or_non_veg": "Veg"
+        },
+        "Jeera Chaap": {
+          "price": "180",
+          "veg_or_non_veg": "Veg"
+        },
+        "KFC Chaap": {
+          "price": "180",
+          "veg_or_non_veg": "Veg"
+        },
+        "Fried Chaap": {
+          "price": "160",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Veg Snacks": {
+        "Tandoori Cheese Tikka": {
+          "price": "160",
+          "veg_or_non_veg": "Veg"
+        },
+        "Cheese Jeera": {
+          "price": "150",
+          "veg_or_non_veg": "Veg"
+        },
+        "Lemon Cheese": {
+          "price": "150",
+          "veg_or_non_veg": "Veg"
+        },
+        "Cheese Chilli": {
+          "price": "220",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Salad": {
+        "Onion Salad": {
+          "price": "30",
+          "veg_or_non_veg": "Veg"
+        },
+        "Kheera Salad": {
+          "price": "30",
+          "veg_or_non_veg": "Veg"
+        },
+        "Green Salad": {
+          "price": "60",
+          "veg_or_non_veg": "Veg"
+        },
+        "Special Cacumber Salad": {
+          "price": "70",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Raita": {
+        "Mixed Raita": {
+          "price": "60",
+          "veg_or_non_veg": "Veg"
+        },
+        "Boondi Raita": {
+          "price": "60",
+          "veg_or_non_veg": "Veg"
+        },
+        "Peanut Raita": {
+          "price": "70",
+          "veg_or_non_veg": "Veg"
+        },
+        "Dahi Tadka": {
+          "price": "60",
+          "veg_or_non_veg": "Veg"
+        },
+        "Dahi Papdi": {
+          "price": "60",
+          "veg_or_non_veg": "Veg"
+        },
+        "Plain Dahi": {
+          "price": "40",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Veg Main Course": {
+        "Kadai Chaap": {
+          "price": "190",
+          "veg_or_non_veg": "Veg"
+        },
+        "Masala Chaap": {
+          "price": "190",
+          "veg_or_non_veg": "Veg"
+        },
+        "Butter Chaap": {
+          "price": "190",
+          "veg_or_non_veg": "Veg"
+        },
+        "Punjabi Chaap Tari": {
+          "price": "170",
+          "veg_or_non_veg": "Veg"
+        },
+        "Masala Paneer": {
+          "price": "180",
+          "veg_or_non_veg": "Veg"
+        },
+        "Cheese Tomato": {
+          "price": "180",
+          "veg_or_non_veg": "Veg"
+        },
+        "Cheese Butter Masala": {
+          "price": "180",
+          "veg_or_non_veg": "Veg"
+        }
+      }
+    },
+    "link": "https://www.swiggy.com/restaurants/tandoori-nights-central-abohar-abohar-158192",
+    "img": "https://tb-static.uber.com/prod/image-proc/processed_images/062051e533bb0a95482f23a46aaff261/9ba9ffab5f885fc3dac87838b3357014.webp"
+  },
+  {
+    "_id": "6538e2cea707f3dcb06e8907",
+    "name": "Hungry Hub",
+    "rating": "4.5",
+    "rating_count": "1k+ ratings",
+    "cost": "₹ 200",
+    "address": "Boring canal road, Patna",
+    "cuisine": "Continental, Indian",
+    "lic_no": "22119652000052",
+    "menu": {
+      "Recommended": {
+        "Burger with Pizza Dip": {
+          "price": "84",
+          "veg_or_non_veg": "Veg"
+        },
+        "Mexican Cheese Burger": {
+          "price": "99",
+          "veg_or_non_veg": "Veg"
+        },
+        "Paneer Burger": {
+          "price": "85",
+          "veg_or_non_veg": "Veg"
+        },
+        "Aloo Tikki Burger": {
+          "price": "60",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Corn Pizza": {
+          "price": "259",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Tomato Pizza": {
+          "price": "259",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Onion Pizza": {
+          "price": "259",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Capsicum Pizza": {
+          "price": "259",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Mix Veg Cheese Pizza": {
+          "price": "287",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Yummy Paneer Treat Pizza": {
+          "price": "315",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Spicy Veggie Delight Pizza": {
+          "price": "298",
+          "veg_or_non_veg": "Veg"
+        },
+        "Mixed Veg Sandwizza": {
+          "price": "75",
+          "veg_or_non_veg": "Veg"
+        },
+        "Black Currant Shake": {
+          "price": "84",
+          "veg_or_non_veg": "Veg"
+        },
+        "Strawberry Shake": {
+          "price": "84",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Burgers": {
+        "Burger with Pizza Dip": {
+          "price": "84",
+          "veg_or_non_veg": "Veg"
+        },
+        "Mexican Cheese Burger": {
+          "price": "99",
+          "veg_or_non_veg": "Veg"
+        },
+        "Paneer Burger": {
+          "price": "85",
+          "veg_or_non_veg": "Veg"
+        },
+        "Chilli Shot Burger": {
+          "price": "84",
+          "veg_or_non_veg": "Veg"
+        },
+        "Mayo Burger": {
+          "price": "99",
+          "veg_or_non_veg": "Veg"
+        },
+        "Green Valley Burger": {
+          "price": "84",
+          "veg_or_non_veg": "Veg"
+        },
+        "Aloo Tikki Burger": {
+          "price": "60",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Sandwiches": {
+        "Mixed Veg Sandwich": {
+          "price": "75",
+          "veg_or_non_veg": "Veg"
+        },
+        "Jumbo Sandwich": {
+          "price": "99",
+          "veg_or_non_veg": "Veg"
+        },
+        "Paneer Sandwich": {
+          "price": "89",
+          "veg_or_non_veg": "Veg"
+        },
+        "Sweet Corn Sandwich": {
+          "price": "79",
+          "veg_or_non_veg": "Veg"
+        },
+        "Mexican Cheese Sandwich": {
+          "price": "89",
+          "veg_or_non_veg": "Veg"
+        },
+        "Herb Sandwich": {
+          "price": "99",
+          "veg_or_non_veg": "Veg"
+        },
+        "Pasta Sandwich": {
+          "price": "89",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Pizza's": {
+        "8'' Corn Pizza": {
+          "price": "259",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Tomato Pizza": {
+          "price": "259",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Onion Pizza": {
+          "price": "259",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Plain Cheese Pizza": {
+          "price": "259",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Capsicum Pizza": {
+          "price": "259",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Mix Veg Cheese Pizza": {
+          "price": "287",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Yummy Paneer Treat Pizza": {
+          "price": "315",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Veggie Loaded Pizza": {
+          "price": "349",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Sweet Corn Cheese Pizza": {
+          "price": "297",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Spicy Veggie Delight Pizza": {
+          "price": "298",
+          "veg_or_non_veg": "Veg"
+        },
+        "8'' Exotic Mushroom Pizza": {
+          "price": "298",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Sweet Corns": {
+        "Butter Lemon Sweet Corn": {
+          "price": "67",
+          "veg_or_non_veg": "Veg"
+        },
+        "Pudina Sweet Corn": {
+          "price": "67",
+          "veg_or_non_veg": "Veg"
+        },
+        "Black Pepper Sweet Corn": {
+          "price": "67",
+          "veg_or_non_veg": "Veg"
+        },
+        "Spice Magic Sweet Corn": {
+          "price": "67",
+          "veg_or_non_veg": "Veg"
+        },
+        "Red Chilli Sweet Corn": {
+          "price": "67",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Quick Bites": {
+        "Mixed Veg Sandwizza": {
+          "price": "75",
+          "veg_or_non_veg": "Veg"
+        },
+        "Veg Garlic Bread": {
+          "price": "120",
+          "veg_or_non_veg": "Veg"
+        },
+        "Cheese Garlic Bread": {
+          "price": "120",
+          "veg_or_non_veg": "Veg"
+        },
+        "Sweet Corn Sandwizza": {
+          "price": "89",
+          "veg_or_non_veg": "Veg"
+        },
+        "Sweet Corn Garlic Bread": {
+          "price": "124",
+          "veg_or_non_veg": "Veg"
+        },
+        "Mushroom Garlic Bread": {
+          "price": "124",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Shakes and Beverages": {
+        "Cold Coffee": {
+          "price": "84",
+          "veg_or_non_veg": "Veg"
+        },
+        "Chocolate Shake": {
+          "price": "84",
+          "veg_or_non_veg": "Veg"
+        },
+        "Black Currant Shake": {
+          "price": "84",
+          "veg_or_non_veg": "Veg"
+        },
+        "Strawberry Shake": {
+          "price": "84",
+          "veg_or_non_veg": "Veg"
+        },
+        "Butterscotch Shake": {
+          "price": "84",
+          "veg_or_non_veg": "Veg"
+        }
+      },
+      "Pasta's": {
+        "Masala Spiral Pasta In Bowl": {
+          "price": "160",
+          "veg_or_non_veg": "Veg"
+        },
+        "Masala Spiral Pasta In Cup": {
+          "price": "80",
+          "veg_or_non_veg": "Veg"
+        }
+      }
+    },
+    "link": "https://www.swiggy.com/restaurants/sam-uncle-central-main-bazar-abohar-158204",
+    "img": "https://img.jakpost.net/c/2016/09/29/2016_09_29_12990_1475116504._large.jpg"
+  }
+]
