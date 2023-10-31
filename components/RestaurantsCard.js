@@ -9,8 +9,9 @@ import { faHeart as faHeartS } from "@fortawesome/free-solid-svg-icons/faHeart";
 import { TouchableHighlight } from "react-native";
 import { TouchableWithoutFeedback } from "react-native";
 import { Dimensions } from "react-native";
+import { Pressable } from "react-native";
 
-function RestaurantsCard({ value }) {
+function RestaurantsCard({ value, navigation }) {
   const [liked, setLiked] = useState([]);
 
   const screenWidth = Dimensions.get("window").width;
@@ -27,8 +28,14 @@ function RestaurantsCard({ value }) {
     }
   };
 
+  const handleRestaurantChange = () => {
+    navigation.navigate("restaurant-details", {
+      restaurantDetails: value.menu,
+    });
+  };
+
   return (
-    <View style={styles.card}>
+    <Pressable style={styles.card} onPress={() => handleRestaurantChange()}>
       <View style={styles.cardImageView}>
         <Image style={styles.cardImg} src={value.img} />
         <TouchableHighlight
@@ -48,7 +55,7 @@ function RestaurantsCard({ value }) {
         <Text style={styles.cardTitle}>{value.rating}</Text>
       </View>
       <Text style={styles.cardTitle}>{value.cuisine}</Text>
-    </View>
+    </Pressable>
   );
 }
 
