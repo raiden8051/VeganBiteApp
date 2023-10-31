@@ -30,7 +30,7 @@ function RestaurantsCard({ value, navigation }) {
 
   const handleRestaurantChange = () => {
     navigation.navigate("restaurant-details", {
-      restaurantDetails: value.menu,
+      restaurantDetails: value,
     });
   };
 
