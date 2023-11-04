@@ -3,9 +3,7 @@ import {
   View,
   StyleSheet,
   Text,
-  TouchableNativeFeedback,
   TouchableHighlight,
-  PermissionsAndroid,
   Image,
   ScrollView,
 } from "react-native";
@@ -13,7 +11,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import { Button, TextInput } from "react-native-paper";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faMicrophone } from "@fortawesome/free-solid-svg-icons/faMicrophone";
 import { faHome } from "@fortawesome/free-solid-svg-icons/faHome";
 import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
 import RestaurantsCard from "../components/RestaurantsCard";
@@ -21,6 +18,7 @@ import data from "../components/swiggyDataSet.json";
 import { FlatList } from "react-native";
 import { Pressable } from "react-native";
 import discountImage from "../assets/discount1.jpg";
+import SearchInput from "../components/SearchInput";
 
 const Home = ({ navigation }) => {
   const [cuisine, setCuisine] = useState([]);
@@ -46,30 +44,9 @@ const Home = ({ navigation }) => {
     setCuisine(Array.from(new Set(a)));
     getData();
   }, []);
-  const requestMicPermission = async () => {
-    try {
-      const granted = await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
-        {
-          title: "Mic access Permission",
-          message: "Please allow access to mic to use audio feature",
-          buttonNeutral: "Ask Me Later",
-          buttonNegative: "Deny",
-          buttonPositive: "Accept",
-        }
-      );
-      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-        alert("You can use the mic");
-      } else {
-        alert("Mic permission denied");
-      }
-    } catch (err) {
-      console.warn(err);
-    }
-  };
 
   return (
-    <LinearGradient colors={["#3EB489", "#ffffff"]} style={styles.gradient}>
+    <LinearGradient colors={["crimson", "#ffffff"]} style={styles.gradient}>
       <SafeAreaView style={styles.container}>
         <ScrollView
           style={{
@@ -88,22 +65,7 @@ const Home = ({ navigation }) => {
               <FontAwesomeIcon style={styles.profileButtonIcon} icon={faUser} />
             </TouchableHighlight>
           </View>
-          <View style={styles.inputView}>
-            <TextInput
-              style={styles.textInput}
-              placeholder="Search, Order, Enjoy, Repeat!"
-              placeholderTextColor="#262626"
-              activeUnderlineColor="transparent"
-              underlineColor="transparent"
-            ></TextInput>
-            <TouchableHighlight
-              style={styles.voiceButton}
-              onPress={() => requestMicPermission()}
-              hitSlop={{ top: 25, bottom: 25, left: 15, right: 15 }}
-            >
-              <FontAwesomeIcon icon={faMicrophone} />
-            </TouchableHighlight>
-          </View>
+          <SearchInput placeholder={"Search, Order, Enjoy, Repeat!"} />
           <View>
             <Image
               style={{
@@ -161,16 +123,6 @@ const styles = StyleSheet.create({
     // justifyContent: "center",
     alignItems: "center",
   },
-  textInput: {
-    width: "90%",
-    borderTopLeftRadius: 12,
-    borderTopRightRadius: 12,
-    borderBottomRightRadius: 12,
-    borderBottomLeftRadius: 12,
-    height: 50,
-    borderColor: "#85929E",
-    borderWidth: 1,
-  },
   cardImg: {
     width: 40,
     height: 40,
@@ -184,19 +136,6 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     marginRight: 20,
     alignSelf: "flex-start",
-  },
-  inputView: {
-    // flex: 1,
-    width: "100%",
-    alignItems: "center",
-    position: "relative",
-    marginTop: 10,
-  },
-  voiceButton: {
-    top: 18,
-    alignSelf: "flex-end",
-    right: 40,
-    position: "absolute",
   },
   gradient: {
     flex: 1,
