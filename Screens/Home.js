@@ -11,7 +11,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import { Button, TextInput } from "react-native-paper";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons/faHome";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons/faLocationDot";
 import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
 import RestaurantsCard from "../components/RestaurantsCard";
 import data from "../components/swiggyDataSet.json";
@@ -19,6 +19,7 @@ import { FlatList } from "react-native";
 import { Pressable } from "react-native";
 import discountImage from "../assets/discount1.jpg";
 import SearchInput from "../components/SearchInput";
+import * as Location from "expo-location";
 
 const Home = ({ navigation }) => {
   const [cuisine, setCuisine] = useState([]);
@@ -55,17 +56,31 @@ const Home = ({ navigation }) => {
           contentContainerStyle={{
             alignItems: "center",
           }}
+          keyboardShouldPersistTaps={"always"}
         >
           <View style={styles.titleView}>
-            <TouchableHighlight style={styles.homeButton}>
-              <FontAwesomeIcon style={styles.homeButtonIcon} icon={faHome} />
-            </TouchableHighlight>
+            <Pressable
+              style={{
+                width: 20,
+                height: 20,
+              }}
+              onPress={() => navigation.navigate("location")}
+              hitSlop={{ top: 25, bottom: 25, left: 25, right: 25 }}
+            >
+              <FontAwesomeIcon
+                style={styles.homeButtonIcon}
+                icon={faLocationDot}
+              />
+            </Pressable>
             <Text style={styles.titleText}>VeganBite</Text>
             <TouchableHighlight style={styles.profileButton}>
               <FontAwesomeIcon style={styles.profileButtonIcon} icon={faUser} />
             </TouchableHighlight>
           </View>
-          <SearchInput placeholder={"Search, Order, Enjoy, Repeat!"} />
+          <SearchInput
+            placeholder={"Search, Order, Enjoy, Repeat!"}
+            type={"food_search"}
+          />
           <View>
             <Image
               style={{
@@ -80,6 +95,8 @@ const Home = ({ navigation }) => {
               }}
             />
           </View>
+
+          {/* <MapView style={styles.map} /> */}
 
           <View style={styles.restCardView}>
             <Text style={styles.restCardTitle}>Cuisine</Text>
@@ -123,6 +140,10 @@ const styles = StyleSheet.create({
     // justifyContent: "center",
     alignItems: "center",
   },
+  map: {
+    width: "50%",
+    height: "100%",
+  },
   cardImg: {
     width: 40,
     height: 40,
@@ -163,6 +184,7 @@ const styles = StyleSheet.create({
     width: "90%",
     paddingBottom: 10,
     position: "relative",
+    flexDirection: "row",
   },
   homeButtonIcon: {
     position: "absolute",
@@ -173,6 +195,7 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
     position: "absolute",
     top: 6,
+    right: 6,
   },
   profileButtonIcon: {
     color: "#fff",

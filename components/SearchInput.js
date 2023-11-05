@@ -5,8 +5,9 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { TextInput } from "react-native";
 import { TouchableHighlight, PermissionsAndroid } from "react-native";
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
-export default function SearchInput({ placeholder }) {
+export default function SearchInput({ placeholder, type }) {
   const requestMicPermission = async () => {
     try {
       const granted = await PermissionsAndroid.request(
@@ -28,7 +29,7 @@ export default function SearchInput({ placeholder }) {
       console.warn(err);
     }
   };
-  return (
+  return type === "food_search" ? (
     <View style={styles.inputView}>
       <TextInput
         style={styles.textInput}
@@ -45,6 +46,31 @@ export default function SearchInput({ placeholder }) {
         <FontAwesomeIcon icon={faMicrophone} />
       </TouchableHighlight>
     </View>
+  ) : (
+    <GooglePlacesAutocomplete
+      placeholder={placeholder}
+      onPress={(data, details = null) => {
+        // 'details' is provided when fetchDetails = true
+        return data;
+      }}
+      styles={{
+        textInput: {
+          height: 38,
+          color: "#5d5d5d",
+          fontSize: 16,
+          padding: 30,
+          marginVertical: 60,
+          marginHorizontal: 20,
+        },
+      }}
+      minLength={2}
+      nearbyPlacesAPI="GooglePlacesSearch"
+      debounce={400}
+      query={{
+        key: "AIzaSyBBQPwpIZNLrCeU9poKzHJr-sbJHhzpoxA",
+        language: "en",
+      }}
+    />
   );
 }
 const styles = StyleSheet.create({
