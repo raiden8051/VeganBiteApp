@@ -6,8 +6,12 @@ import { StyleSheet } from "react-native";
 import { TextInput } from "react-native";
 import { TouchableHighlight, PermissionsAndroid } from "react-native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
+import Geocoder from "react-native-geocoding";
 
 export default function SearchInput({ placeholder, type }) {
+  const navigation = useNavigation();
   const requestMicPermission = async () => {
     try {
       const granted = await PermissionsAndroid.request(
@@ -29,8 +33,55 @@ export default function SearchInput({ placeholder, type }) {
       console.warn(err);
     }
   };
+
+  const handleConfirmLocation = (coordinate) => {
+    // console.log(e.nativeEvent);
+    Geocoder.from(coordinate.lat, coordinate.lng)
+      .then((json) => {
+        var addressComponent = json.results[0].address_components;
+
+        let add = {
+          line1: [
+            addressComponent.filter((a) => {
+              return a.types.includes("plus_code");
+            })[0]?.long_name,
+            addressComponent.filter((a) => {
+              return (
+                a.types.includes("premise") || a.types.includes("establishment")
+              );
+            })[0]?.long_name,
+            addressComponent.filter((a) => {
+              return (
+                a.types.includes("route") || a.types.includes("neighborhood")
+              );
+            })[0]?.long_name,
+            addressComponent.filter((a) => {
+              return a.types.includes("sublocality");
+            })[0]?.long_name,
+          ],
+          city: addressComponent.filter((a) => {
+            return a.types.includes("locality");
+          })[0]?.long_name,
+          state: addressComponent.filter((a) => {
+            return a.types.includes("administrative_area_level_1");
+          })[0]?.long_name,
+          zip: addressComponent.filter((a) => {
+            return a.types.includes("postal_code");
+          })[0]?.long_name,
+          country: addressComponent.filter((a) => {
+            return a.types.includes("country");
+          })[0]?.long_name,
+        };
+
+        navigation.navigate("location", {
+          postalAddress: add,
+        });
+      })
+      .catch((error) => console.warn(error));
+  };
+
   return type === "food_search" ? (
-    <View style={styles.inputView}>
+    <View style={[styles.inputView, styles.shadowProp]}>
       <TextInput
         style={styles.textInput}
         placeholder={placeholder}
@@ -47,30 +98,52 @@ export default function SearchInput({ placeholder, type }) {
       </TouchableHighlight>
     </View>
   ) : (
-    <GooglePlacesAutocomplete
-      placeholder={placeholder}
-      onPress={(data, details = null) => {
-        // 'details' is provided when fetchDetails = true
-        return data;
-      }}
-      styles={{
-        textInput: {
-          height: 38,
-          color: "#5d5d5d",
-          fontSize: 16,
-          padding: 30,
-          marginVertical: 60,
-          marginHorizontal: 20,
-        },
-      }}
-      minLength={2}
-      nearbyPlacesAPI="GooglePlacesSearch"
-      debounce={400}
-      query={{
-        key: "AIzaSyBBQPwpIZNLrCeU9poKzHJr-sbJHhzpoxA",
-        language: "en",
-      }}
-    />
+    <SafeAreaView style={{ flex: 0, alignItems: "center" }}>
+      <View style={{ width: "100%", paddingHorizontal: 20 }}>
+        <Text
+          style={{
+            marginTop: 30,
+            fontWeight: 800,
+            fontSize: 16,
+            color: "#262626",
+          }}
+        >
+          Enter your area or apartment name
+        </Text>
+        <GooglePlacesAutocomplete
+          enablePoweredByContainer={false}
+          placeholder={placeholder}
+          fetchDetails={true}
+          onPress={(data, details = null) => {
+            // 'details' is provided when fetchDetails = true
+            handleConfirmLocation(details.geometry.location);
+            // return data;
+          }}
+          styles={{
+            container: {
+              flex: 0,
+            },
+            textInput: {
+              height: 44,
+              color: "#5d5d5d",
+              fontSize: 16,
+              padding: 30,
+              marginVertical: 12,
+              // marginHorizontal: 20,
+              elevation: 10,
+              shadowColor: "#171717",
+            },
+          }}
+          minLength={2}
+          nearbyPlacesAPI="GooglePlacesSearch"
+          debounce={400}
+          query={{
+            key: "AIzaSyBBQPwpIZNLrCeU9poKzHJr-sbJHhzpoxA",
+            language: "en",
+          }}
+        />
+      </View>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
@@ -81,10 +154,8 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 12,
     borderBottomLeftRadius: 12,
     height: 50,
-    borderColor: "#85929E",
     backgroundColor: "#fff",
     paddingLeft: 20,
-    borderWidth: 1,
     fontSize: 14,
   },
   inputView: {
@@ -99,5 +170,9 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
     right: 40,
     position: "absolute",
+  },
+  shadowProp: {
+    elevation: 10,
+    shadowColor: "#171717",
   },
 });

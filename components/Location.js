@@ -1,80 +1,78 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useEffect, useState } from "react";
 import SearchInput from "./SearchInput";
-import { LinearGradient } from "expo-linear-gradient";
-import MapView, { Marker } from "react-native-maps";
-import * as ELocation from "expo-location";
+import { faMap } from "@fortawesome/free-solid-svg-icons/faMap";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
-export default function Location() {
-  const [coordinate, setCoordinate] = useState({
-    lat: 25.612677,
-    lng: 85.158875,
-  });
+export default function Location({ route, navigation }) {
+  const [address, setAddress] = useState({});
+  const [streetAddress, setStreetAddress] = useState("");
+
   useEffect(() => {
-    (async () => {
-      let { status } = await ELocation.requestForegroundPermissionsAsync();
-      if (status !== "granted") {
-        console.log("Permission to access location was denied");
-        return;
-      }
+    let a = route.params?.postalAddress || {};
+    if (Object.keys(a).length > 0) {
+      let line1 = "";
 
-      let location = await ELocation.getCurrentPositionAsync({});
-      console.log(location?.coords?.latitude);
-      setCoordinate((prev) => ({
-        ...prev,
-        lat: location?.coords?.latitude,
-        lng: location?.coords?.longitude,
-      }));
-    })();
-  }, []);
-
-  const handleMarketDrag = (e) => {
-    setCoordinate((prev) => ({
-      ...prev,
-      lat: e?.nativeEvent?.coordinate?.latitude,
-      lng: e?.nativeEvent?.coordinate?.longitude,
-    }));
-  };
-
+      a.line1.forEach((element) => {
+        if (element) line1 += element + ", ";
+      });
+      setStreetAddress(line1);
+    }
+    setAddress(a || {});
+  }, [route]);
   return (
-    <LinearGradient colors={["crimson", "#ffffff"]} style={styles.gradient}>
+    // <LinearGradient colors={["crimson", "#ffffff"]} style={styles.gradient}>
+    <View style={{ flex: 1 }}>
       <SearchInput placeholder={"Search food location"} type={"location"} />
-      <View style={styles.container}>
-        <MapView
-          style={styles.map}
-          region={{
-            latitude: coordinate.lat,
-            longitude: coordinate.lng,
-            latitudeDelta: 0.003,
-            longitudeDelta: 0.003,
+      {Object.keys(address).length > 0 && (
+        <View style={{ paddingHorizontal: 25, paddingVertical: 15 }}>
+          <Text
+            style={{
+              fontWeight: 500,
+              fontSize: 14,
+              color: "#505050",
+            }}
+          >
+            Food will be delvered at this location
+          </Text>
+          <Text style={{ fontWeight: 700, fontSize: 16, color: "#505050" }}>
+            {streetAddress}
+            {address.city}, {address.state}, {address.zip}
+          </Text>
+        </View>
+      )}
+      <View style={{ flex: 0, margin: 10, paddingHorizontal: 10 }}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("map")}
+          style={{
+            flex: 0,
+            flexDirection: "row",
+            gap: 10,
+            padding: 10,
+            alignItems: "center",
           }}
         >
-          <Marker
-            draggable
-            coordinate={{ latitude: coordinate.lat, longitude: coordinate.lng }}
-            onDragEnd={(e) => handleMarketDrag(e)}
-            // image={
-            //   {
-            //     //   uri: "https://toppng.com//public/uploads/preview/eat-play-do-icon-map-marker-115548254600u9yjx6qhj.png",
-            //   }
-            // }
-          />
-        </MapView>
+          <>
+            <FontAwesomeIcon style={{ color: "crimson" }} icon={faMap} />
+            <Text
+              style={{
+                color: "crimson",
+                fontWeight: 700,
+                fontSize: 14,
+              }}
+            >
+              Use map to locate your location
+            </Text>
+          </>
+        </TouchableOpacity>
       </View>
-    </LinearGradient>
+    </View>
+    // </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
-  gradient: {
-    flex: 1,
-    width: "100%",
-  },
   container: {
     alignItems: "center",
-  },
-  map: {
-    width: "80%",
-    height: "70%",
   },
 });
