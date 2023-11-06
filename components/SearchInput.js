@@ -34,6 +34,32 @@ export default function SearchInput({ placeholder, type }) {
     }
   };
 
+  const updateAddressDB = async (address) => {
+    const response = await fetch("http://192.168.1.11:3001/api/updateaddress", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userId: 1234,
+        type: "Home",
+        line1: address.line1,
+        city: address.city,
+        state: address.state,
+        country: address.country,
+        postal_code: address.zip,
+        lat: address.lat,
+        lng: address.lng,
+      }),
+    });
+    const data = await response.json();
+
+    if (!data.success) {
+      console.log(data);
+      alert("Something went wrong");
+    }
+  };
+
   const handleConfirmLocation = (coordinate) => {
     // console.log(e.nativeEvent);
     Geocoder.from(coordinate.lat, coordinate.lng)
@@ -41,6 +67,7 @@ export default function SearchInput({ placeholder, type }) {
         var addressComponent = json.results[0].address_components;
 
         let add = {
+          type: "Home",
           line1: [
             addressComponent.filter((a) => {
               return a.types.includes("plus_code");
@@ -71,7 +98,11 @@ export default function SearchInput({ placeholder, type }) {
           country: addressComponent.filter((a) => {
             return a.types.includes("country");
           })[0]?.long_name,
+          lat: coordinate.lat,
+          lng: coordinate.lng,
         };
+
+        updateAddressDB(add);
 
         navigation.navigate("location", {
           postalAddress: add,
