@@ -4,6 +4,7 @@ import WelcomeScreen from "./WelcomeScreen";
 import Home from "../Screens/Home";
 import RestaurantDetails from "./RestaurantDetails/RestaurantDetails";
 import Location from "./Location";
+import Map from "./Map";
 
 // import Login from "./Login";
 // import Profile from "./Profile";
@@ -15,12 +16,19 @@ const RootNavigator = () => {
   return (
     <Stack.Navigator
       initialRouteName="home"
-      screenOptions={{ headerShown: false, animationTypeForReplace: "pop" }}
+      screenOptions={{
+        headerShown: false,
+        animationTypeForReplace: "pop",
+        contentStyle: {
+          backgroundColor: "#FFFFFF",
+        },
+      }}
     >
       <Stack.Screen name="splash" component={WelcomeScreen} />
       <Stack.Screen name="home" component={Home} />
       <Stack.Screen name="restaurant-details" component={RestaurantDetails} />
       <Stack.Screen name="location" component={Location} />
+      <Stack.Screen name="map" component={Map} />
     </Stack.Navigator>
   );
 };

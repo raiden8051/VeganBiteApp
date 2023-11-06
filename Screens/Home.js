@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
-import { Button, TextInput } from "react-native-paper";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons/faLocationDot";
 import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
@@ -17,25 +16,52 @@ import RestaurantsCard from "../components/RestaurantsCard";
 import data from "../components/swiggyDataSet.json";
 import { FlatList } from "react-native";
 import { Pressable } from "react-native";
-import discountImage from "../assets/discount1.jpg";
 import SearchInput from "../components/SearchInput";
-import * as Location from "expo-location";
 
-const Home = ({ navigation }) => {
+const Home = ({ navigation, route }) => {
   const [cuisine, setCuisine] = useState([]);
 
   const [d, setD] = useState([]);
 
+  const [streetAddress, setStreetAddress] = useState("");
+  const [address, setAddress] = useState({});
+
   const getData = async () => {
-    const response = await fetch("http://192.168.1.11:3001/api/restaurants", {
+    let response = await fetch("http://192.168.1.11:3001/api/restaurants", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
     });
-    const data = await response.json();
+    let data = await response.json();
     setD(data);
   };
+
+  useEffect(() => {
+    getAddress();
+  }, [route]);
+
+  const getAddress = async () => {
+    let response = await fetch("http://192.168.1.11:3001/api/getaddress", {
+      method: "POST",
+      body: JSON.stringify({ userId: "1234" }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    let data = await response.json();
+    if (data.success) {
+      setAddress(data?.data);
+      let line1 = "";
+
+      data?.data.line1.forEach((element) => {
+        if (element) line1 += element + ", ";
+      });
+      setStreetAddress(line1);
+    }
+  };
+
+  // getAddress();
 
   useEffect(() => {
     let a = [];
@@ -72,11 +98,27 @@ const Home = ({ navigation }) => {
                 icon={faLocationDot}
               />
             </Pressable>
-            <Text style={styles.titleText}>VeganBite</Text>
+            <Text style={styles.titleText}>
+              {Object.keys(address).length > 0 ? address.type : "VeganBite"}
+            </Text>
             <TouchableHighlight style={styles.profileButton}>
               <FontAwesomeIcon style={styles.profileButtonIcon} icon={faUser} />
             </TouchableHighlight>
           </View>
+          {Object.keys(address).length > 0 && (
+            <View
+              style={{
+                width: "90%",
+                paddingRight: 60,
+                paddingLeft: 4,
+                marginBottom: 16,
+              }}
+            >
+              <Text style={{ color: "#303030" }} numberOfLines={1}>
+                {streetAddress} {address.city}
+              </Text>
+            </View>
+          )}
           <SearchInput
             placeholder={"Search, Order, Enjoy, Repeat!"}
             type={"food_search"}
@@ -136,7 +178,7 @@ const Home = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     // flex: 1,
-    paddingTop: 30,
+    paddingTop: 20,
     // justifyContent: "center",
     alignItems: "center",
   },
@@ -175,14 +217,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   titleText: {
-    color: "#f5f5f5",
+    color: "#262626",
     fontWeight: "900",
     fontSize: 20,
-    paddingLeft: 24,
+    paddingLeft: 6,
   },
   titleView: {
     width: "90%",
-    paddingBottom: 10,
+    // paddingBottom: 10,
     position: "relative",
     flexDirection: "row",
   },

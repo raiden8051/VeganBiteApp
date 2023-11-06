@@ -248,7 +248,10 @@ export default function RestaurantDetails({ route }) {
                 </Text>
                 <FontAwesomeIcon icon={faEllipsis} />
               </View>
-              <SearchInput placeholder={"Search for dishes"} />
+              <SearchInput
+                placeholder={"Search for dishes"}
+                type={"food_search"}
+              />
               <View style={[styles.container, styles.shadowProp]}>
                 <FlatList
                   showsVerticalScrollIndicator={false}
